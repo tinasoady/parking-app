@@ -1,6 +1,7 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Ionicons } from '@expo/vector-icons';
 import { HomeScreen } from '../screens/HomeScreen';
 import { CheckoutScreen } from '../screens/CheckoutScreen';
 import { HistoryScreen } from '../screens/HistoryScreen';
@@ -31,10 +32,46 @@ function Tabs() {
         tabBarInactiveTintColor: colors.textMuted,
       }}
     >
-      <Tab.Screen name="Home" component={HomeScreen as any} options={{ title: 'Accueil' }} />
-      <Tab.Screen name="Checkout" component={CheckoutScreen as any} options={{ title: 'Sorties' }} />
-      <Tab.Screen name="History" component={HistoryScreen as any} options={{ title: 'Historique' }} />
-      <Tab.Screen name="Settings" component={SettingsScreen as any} options={{ title: 'Réglages' }} />
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen as any}
+        options={{
+          title: 'Accueil',
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons name={focused ? 'home' : 'home-outline'} color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Checkout"
+        component={CheckoutScreen as any}
+        options={{
+          title: 'Sorties',
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons name={focused ? 'exit' : 'exit-outline'} color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="History"
+        component={HistoryScreen as any}
+        options={{
+          title: 'Historique',
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons name={focused ? 'time' : 'time-outline'} color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={SettingsScreen as any}
+        options={{
+          title: 'Réglages',
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons name={focused ? 'settings' : 'settings-outline'} color={color} size={size} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }

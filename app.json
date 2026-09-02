@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "Parking Manager",
+    "slug": "parking-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "parking-app",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.parkingapp.manager",
+      "infoPlist": {
+        "UISupportedExternalAccessoryProtocols": ["com.apple.m1"]
+      }
+    },
+    "android": {
+      "package": "com.parkingapp.manager",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_SCAN",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-sqlite",
+      "expo-dev-client"
+    ]
+  }
+}
